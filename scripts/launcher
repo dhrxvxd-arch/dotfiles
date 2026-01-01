@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+pkill -x dmenu || $(
+    input=$(
+        dmenu \
+            -fn 'Iosevka-12' \
+            -nb '#000000' \
+            -nf '#ffffff' \
+            -sb '#444444' \
+            -sf '#ffffff' \
+            -i \
+            -l 1 \
+            < <(dmenu_path)
+    )
+
+    [ -z "$input" ] && exit 0
+
+    case "$input" in
+        :*)
+            file="${input#:}"
+            kitty nvim "$(eval echo "$file")"
+            ;;
+        '&'*)
+            folder="${input#&}"
+            kitty yazi "$(eval echo "$folder")"
+            ;;
+        *)
+            setsid -f sh -c "$input" >/dev/null 2>&1
+            ;;
+    esac
+)
+
