@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Firefox</title>
+    <style>
+      * {
+	  color : #202020;
+      }
+    </style>
+  </head>
+  <body>
+  </body>
+</html>
