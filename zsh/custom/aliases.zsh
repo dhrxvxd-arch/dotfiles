@@ -1,0 +1,8 @@
+alias mk='sudo make clean install'
+alias sk='cd $HOME/.local/src/'
+alias mkdwm='p=pwd; sk; cd dwm; mk; cd p'
+alias mkst='p=pwd; sk; cd st; mk; cd p'
+alias mkdm='p=pwd; sk; cd dmenu; mk; cd p'
+alias mkdwmb='p=pwd; sudo make install; cd dwmblocks; mk; cd p'
+alias neofetch='fastfetch'
+alias cmatrix='cmatrix -u 10 -B -f'

@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+set -e
+
+DIR="$HOME/tmp"
+IMG="$DIR/lock.png"
+
+mkdir -p "$DIR"
+
+# Screenshot (overwrite)
+scrot -o "$IMG"
+
+# Blur + muted gruvbox tint (ImageMagick v7)
+magick "$IMG" \
+  -blur 0x8 \
+  -fill "#282828" -colorize 20% \
+  "$IMG"
+
+# Auth colors (muted gruvbox)
+export XSECURELOCK_AUTH_FOREGROUND_COLOR="#ebdbb2"
+export XSECURELOCK_AUTH_WARNING_COLOR="#bdae93"
+export XSECURELOCK_AUTH_BACKGROUND_COLOR="#282828"
+
+# Use mpv saver with ONE image only
+export XSECURELOCK_SAVER="saver_mpv"
+export XSECURELOCK_LIST_VIDEOS_COMMAND="printf '%s\n' '$IMG'"
+export XSECURELOCK_IMAGE_DURATION_SECONDS=3600
+
+exec xsecurelock
+

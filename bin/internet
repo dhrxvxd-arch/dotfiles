@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+    3) notify-send "WiFi" "Click to manage WiFi connections" ;;
+    6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+# WiFi signal percentage only
+if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = "up" ]; then
+    awk '/^\s*w/ { printf "%d%%\n", $3 * 100 / 70 }' /proc/net/wireless
+else
+    printf "down"
+fi
+
