@@ -1,0 +1,5 @@
+#/usr/bin/env bash
+
+title=$(xdotool getactivewindow getwindowname 2>/dev/null)
+printf '%s\n' "${title:-Desktop}"
+
