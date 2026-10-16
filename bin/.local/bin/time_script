@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cur_time="$(date '+%a %b %d %T %Y')"
+echo "  ${cur_time}"
+
