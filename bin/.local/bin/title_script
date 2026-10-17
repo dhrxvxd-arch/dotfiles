@@ -1,5 +1,13 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 title=$(xdotool getactivewindow getwindowname 2>/dev/null)
-printf '%s\n' "${title:-Desktop}"
+title=${title:-Desktop}
+
+max=30
+
+if ((${#title} > max)); then
+    title="${title:0:max-3}..."
+fi
+
+printf '%s\n' "$title"
 

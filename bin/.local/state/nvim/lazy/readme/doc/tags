@@ -1,4 +1,13 @@
 !_TAG_FILE_ENCODING	utf-8	//
+baleia.nvim-1-manual-colorization	baleia.nvim.md	/### 1. Manual Colorization
+baleia.nvim-2-automatic-colorization-tailing-logs	baleia.nvim.md	/### 2. Automatic Colorization (Tailing Logs)
+baleia.nvim-baleia-nvim	baleia.nvim.md	/# baleia.nvim
+baleia.nvim-developer-api	baleia.nvim.md	/## Developer API
+baleia.nvim-install	baleia.nvim.md	/## Install
+baleia.nvim-license	baleia.nvim.md	/## License
+baleia.nvim-setup-options	baleia.nvim.md	/### Setup Options
+baleia.nvim-usage-configuration	baleia.nvim.md	/## Usage & Configuration
+baleia.nvim-with-conjure	baleia.nvim.md	/## With Conjure
 nui.nvim-blocks	nui.nvim.md	/## Blocks
 nui.nvim-components	nui.nvim.md	/## Components
 nui.nvim-extendibility	nui.nvim.md	/## Extendibility
